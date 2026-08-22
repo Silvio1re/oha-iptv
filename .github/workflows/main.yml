@@ -3,7 +3,10 @@ name: Update M3U Playlist
 on:
   schedule:
     - cron: '0 */2 * * *'  # Svaka 2 sata
-  workflow_dispatch:        # Omogućuje i ručno pokretanje
+  workflow_dispatch:        # Ručno pokretanje
+
+permissions:
+  contents: write   # <--- OVO JE KLJUČNO – daje botu dozvolu za push
 
 jobs:
   generate:
